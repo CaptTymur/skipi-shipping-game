@@ -1,0 +1,58 @@
+{
+  "id": "shipping-game",
+  "fqid": "app.skipi.plugins.shipping-game",
+  "name": "Игра в судоходство / Shipping Game",
+  "version": "0.1.0",
+  "developer": "Skipi (first-party)",
+  "kind": "utility",
+  "distribution": {
+    "mode": "bundled_first_party",
+    "remote_code": false
+  },
+  "supported_hosts": [
+    "seafarer"
+  ],
+  "entrypoints": {
+    "ui": "index.js",
+    "style": "index.css"
+  },
+  "permissions": [
+    "local_storage"
+  ],
+  "roles": {
+    "seafarer": {
+      "role": "player",
+      "context": "shipping_game",
+      "capabilities": [
+        "local_storage"
+      ]
+    }
+  },
+  "network": "none",
+  "data_access": "none",
+  "assets": {
+    "map_contours": "assets/map-contours.json",
+    "map_renderer": "MapRenderer"
+  },
+  "game": {
+    "phase": "A",
+    "playable_role": "commercial_manager",
+    "roles": [
+      "captain",
+      "commercial_manager",
+      "shipowner"
+    ],
+    "scenario_id": "black-sea-fixture-001",
+    "score_storage": "shipping-game.score.v1",
+    "log_storage": "shipping-game.logs.v1"
+  },
+  "safety": {
+    "requires_disclaimer": true,
+    "no_fake_sent": true,
+    "no_real_vessel_data": true,
+    "no_direct_network": true,
+    "host_injected_identity": true,
+    "assistant_lab_only": true,
+    "disclaimer": "Игровая симуляция для обучения и развлечения. Не является навигационным или коммерческим советом."
+  }
+}

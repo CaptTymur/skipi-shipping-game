@@ -1,0 +1,25 @@
+{
+  "id": "shipping-game",
+  "fqid": "app.skipi.plugins.shipping-game",
+  "name": "Игра в судоходство / Shipping Game",
+  "version": "0.1.0",
+  "kind": "plugin",
+  "type": "utility",
+  "developer": "Skipi",
+  "hosts": ["seafarer"],
+  "entrypoints": {
+    "lab": "test-host/index.html",
+    "contract_test": "test-host/contract-test.html",
+    "ui": "dist/plugins/shipping-game/index.js",
+    "style": "dist/plugins/shipping-game/index.css"
+  },
+  "artifact": "dist/plugins/shipping-game/",
+  "build": "node src/build.js",
+  "canonical_manifest": "src/manifest.json",
+  "distribution": {
+    "mode": "bundled_first_party",
+    "remote_code": false
+  },
+  "status": "Phase A map-first prototype; Seafarer integration is out of scope"
+}
+

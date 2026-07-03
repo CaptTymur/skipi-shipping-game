@@ -1,0 +1,181 @@
+{
+  "id": "black-sea-fixture-001",
+  "title": "Black Sea fixture: one ship, three rationalities",
+  "title_ru": "Черноморская сделка: одно судно, три рациональности",
+  "playable_role": "commercial_manager",
+  "map": {
+    "center": [31.5, 41.5],
+    "zoom": 2
+  },
+  "vessel": {
+    "id": "fictional-mv-northern-light",
+    "name": "MV Northern Light",
+    "note": "Fictional training vessel, not a real vessel record.",
+    "marker": {
+      "lon": 31.25,
+      "lat": 43.25,
+      "label": "MV Northern Light"
+    }
+  },
+  "briefing": "You are acting as the commercial manager. The vessel is opening in the Black Sea with limited bunker margin, a cautious captain and an owner watching cash. Your job is not to be heroic. Your job is to keep the vessel employed without creating a claim that destroys the voyage.",
+  "briefing_ru": "Вы играете коммерческого менеджера. Судно открывается в Черном море, бункер ограничен, капитан осторожен, владелец смотрит на кассу. Задача не геройствовать, а занять судно без претензии, которая съест рейс.",
+  "starting_score": {
+    "cash": 50,
+    "safety": 50,
+    "reputation": 50,
+    "learning": 0
+  },
+  "steps": [
+    {
+      "id": "lead",
+      "title": "Which cargo lead do you chase first?",
+      "prompt": "Three brokers call within twenty minutes. The high-rate cargo is attractive, but the laycan and receiver are vague.",
+      "options": [
+        {
+          "id": "balanced-steel",
+          "label": "Take the steel coils lead at a moderate rate",
+          "effect": {"cash": 6, "safety": 4, "reputation": 6, "learning": 3},
+          "consequence": "You keep the ship employed with cleaner counterparties and less drama. The owner asks why the rate is not higher."
+        },
+        {
+          "id": "risky-grain",
+          "label": "Push the high-rate grain cargo",
+          "effect": {"cash": 12, "safety": -5, "reputation": -4, "learning": 5},
+          "consequence": "The headline freight is strong, but the uncertainty moves risk from the fixture desk to the vessel."
+        },
+        {
+          "id": "wait-market",
+          "label": "Wait one more day for better cargo",
+          "effect": {"cash": -6, "safety": 2, "reputation": -2, "learning": 2},
+          "consequence": "You avoid a bad fixture, but the open position starts costing money and attention."
+        }
+      ]
+    },
+    {
+      "id": "terms",
+      "title": "How hard do you push the charter terms?",
+      "prompt": "The charterer wants broad weather exceptions and slow document flow. The owner wants a clean recap today.",
+      "options": [
+        {
+          "id": "firm-demurrage",
+          "label": "Hold firm on demurrage and document deadlines",
+          "effect": {"cash": 5, "safety": 1, "reputation": 4, "learning": 4},
+          "consequence": "The recap is slower, but you buy clarity before the vessel starts moving."
+        },
+        {
+          "id": "soft-terms",
+          "label": "Accept soft terms to close fast",
+          "effect": {"cash": 4, "safety": -2, "reputation": -5, "learning": 3},
+          "consequence": "The fixture closes quickly. The weak clauses are now waiting for the first port delay."
+        },
+        {
+          "id": "walk-away",
+          "label": "Walk away unless the recap is clean",
+          "effect": {"cash": -4, "safety": 4, "reputation": 3, "learning": 2},
+          "consequence": "You protect the ship, but the owner sees another day idle."
+        }
+      ]
+    },
+    {
+      "id": "captain",
+      "title": "The captain asks for safer instructions",
+      "prompt": "A weather window is closing. The captain recommends a slower, safer approach. The charterer is already pushing laycan.",
+      "options": [
+        {
+          "id": "support-captain",
+          "label": "Support the captain and inform charterers early",
+          "effect": {"cash": -2, "safety": 10, "reputation": 7, "learning": 5},
+          "consequence": "You lose some commercial sharpness but prevent the conflict from becoming a surprise."
+        },
+        {
+          "id": "press-speed",
+          "label": "Press for speed to protect laycan",
+          "effect": {"cash": 6, "safety": -10, "reputation": -6, "learning": 5},
+          "consequence": "You may protect the date, but the captain now feels commercial pressure is overruling seamanship."
+        },
+        {
+          "id": "ask-options",
+          "label": "Ask for two ETA options with risk notes",
+          "effect": {"cash": 3, "safety": 6, "reputation": 6, "learning": 6},
+          "consequence": "You turn a conflict into a decision table. The owner and captain can both see the tradeoff."
+        }
+      ]
+    },
+    {
+      "id": "bunkers",
+      "title": "Bunker margin is tight",
+      "prompt": "A cheaper stem is available later, but deviation now would reduce operational risk. The owner dislikes extra cost.",
+      "options": [
+        {
+          "id": "deviate-safe",
+          "label": "Approve a small deviation for safer bunkers",
+          "effect": {"cash": -5, "safety": 9, "reputation": 3, "learning": 4},
+          "consequence": "The voyage loses some margin but avoids a fragile fuel plan."
+        },
+        {
+          "id": "wait-cheap",
+          "label": "Wait for the cheaper stem",
+          "effect": {"cash": 6, "safety": -6, "reputation": -1, "learning": 3},
+          "consequence": "The spreadsheet improves, but the captain has less room for weather and port changes."
+        },
+        {
+          "id": "split-plan",
+          "label": "Take minimum now and review after loading",
+          "effect": {"cash": 2, "safety": 3, "reputation": 2, "learning": 5},
+          "consequence": "You preserve optionality, but you must actively manage the next decision."
+        }
+      ]
+    },
+    {
+      "id": "claim",
+      "title": "A delay claim appears",
+      "prompt": "The charterer blames the vessel for lost time. Your documents are decent but not perfect.",
+      "options": [
+        {
+          "id": "fight-hard",
+          "label": "Reject the claim aggressively",
+          "effect": {"cash": 4, "safety": 0, "reputation": -8, "learning": 4},
+          "consequence": "You look strong today but risk turning a manageable dispute into a relationship problem."
+        },
+        {
+          "id": "documented-compromise",
+          "label": "Offer a documented compromise",
+          "effect": {"cash": 1, "safety": 1, "reputation": 8, "learning": 6},
+          "consequence": "You give up a little money to preserve the counterparty and close the file cleanly."
+        },
+        {
+          "id": "send-to-lawyers",
+          "label": "Escalate immediately to lawyers",
+          "effect": {"cash": -3, "safety": 0, "reputation": -4, "learning": 3},
+          "consequence": "You protect the formal position, but cost and delay rise before the facts are fully organized."
+        }
+      ]
+    },
+    {
+      "id": "next",
+      "title": "What do you do after discharge?",
+      "prompt": "The vessel can chase another marginal cargo, reposition for a cleaner market, or pause for maintenance.",
+      "options": [
+        {
+          "id": "chain-cargo",
+          "label": "Chain another marginal cargo quickly",
+          "effect": {"cash": 8, "safety": -5, "reputation": -3, "learning": 4},
+          "consequence": "The ship stays busy, but accumulated operational risk follows you."
+        },
+        {
+          "id": "reposition-clean",
+          "label": "Reposition toward a cleaner market",
+          "effect": {"cash": 2, "safety": 4, "reputation": 5, "learning": 5},
+          "consequence": "You accept a quieter short-term result to improve the next negotiation."
+        },
+        {
+          "id": "maintenance-window",
+          "label": "Create a short maintenance window",
+          "effect": {"cash": -6, "safety": 10, "reputation": 2, "learning": 5},
+          "consequence": "The owner feels the cost, but the captain gets a vessel that can actually perform."
+        }
+      ]
+    }
+  ]
+}
+
