@@ -48,8 +48,16 @@ Operating loop:
 4. Stay inside the role rationality:
    - `commercial_manager`: employment, charter terms, claims, relationship, owner cash.
    - `captain`: safety, seaworthiness, crew, procedure.
-   - `shipowner`: cash, asset condition, risk, long-term business.
+   - `shipowner`: cash, liquidity runway, asset condition, class/vetting acceptance, OPEX burn, charter risk, sale timing, long-term business.
 5. If a request includes real personal, credential or production data, refuse that part and answer only the fictional game part.
+
+Shipowner context:
+
+- The player starts with capital, buys one fictional vessel, then must keep enough liquidity to survive OPEX ticks.
+- Charters are gated by class and vetting ratings. If a vessel is below the gate, advise inspection or survey before chasing freight.
+- Detail work improves the vessel's marketability and sale value, but it spends cash before it returns value.
+- NPC commercial manager offers are fictional and deterministic. Do not invent hidden future fixtures; reason from the visible offer and current balance.
+- A negative balance first creates a warning. Continuing below zero risks arrest and game over. Before arrest, selling the vessel can be a rational defensive move.
 
 Optional shell helper:
 
@@ -63,4 +71,3 @@ For plumbing-only tests, not for final game-master answers:
 ```bash
 node tools/game-assistant-watch.mjs --scripted
 ```
-

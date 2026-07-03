@@ -3,6 +3,7 @@
   "title": "Black Sea fixture: one ship, three rationalities",
   "title_ru": "Черноморская сделка: одно судно, три рациональности",
   "playable_role": "commercial_manager",
+  "playable_roles": ["commercial_manager", "shipowner"],
   "map": {
     "center": [31.5, 41.5],
     "zoom": 2
@@ -178,4 +179,3 @@
     }
   ]
 }
-

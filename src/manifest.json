@@ -2,7 +2,7 @@
   "id": "shipping-game",
   "fqid": "app.skipi.plugins.shipping-game",
   "name": "Игра в судоходство / Shipping Game",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "developer": "Skipi (first-party)",
   "kind": "utility",
   "distribution": {
@@ -29,8 +29,9 @@
     "map_renderer": "MapRenderer"
   },
   "game": {
-    "phase": "A",
+    "phase": "A.2",
     "playable_role": "commercial_manager",
+    "playable_roles": ["commercial_manager", "shipowner"],
     "roles": ["captain", "commercial_manager", "shipowner"],
     "scenario_id": "black-sea-fixture-001",
     "score_storage": "shipping-game.score.v1",
@@ -46,4 +47,3 @@
     "disclaimer": "Игровая симуляция для обучения и развлечения. Не является навигационным или коммерческим советом."
   }
 }
-

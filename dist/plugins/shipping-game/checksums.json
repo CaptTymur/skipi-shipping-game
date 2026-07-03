@@ -4,16 +4,16 @@
   "generated_by": "src/build.js",
   "files": {
     "plugin.json": {
-      "bytes": 1473,
-      "sha256": "528c5c109b03980d35ca6a2c6428a2d85275ef5b8c953e69f5592aadf46f2ce0"
+      "bytes": 1552,
+      "sha256": "85ac3b35a833ef21eab32deed1ea7d885df66a44e38e805ff8e7b44edf7d018e"
     },
     "index.js": {
-      "bytes": 88861,
-      "sha256": "81aad822fde9fab96d0fc8d880d9ff3bad3c7f68a6621698ca27542a27198ec3"
+      "bytes": 114728,
+      "sha256": "acadc20eebcaeb03c4e0643d0e6e21ad986e829cea24af8f15b26324cf2cdd2f"
     },
     "index.css": {
-      "bytes": 5409,
-      "sha256": "bd2cdc044060df702ae3a4de83cdfb547bb988c23972133fcd519f5a17decb9c"
+      "bytes": 7588,
+      "sha256": "de47f7f73c3bf64dd356ae9ce327b02a82b9c0f7ed9f27759505360a596ad385"
     },
     "assets/map-contours.json": {
       "bytes": 55207,
@@ -24,19 +24,19 @@
       "sha256": "913d693a3f737e691fd75f161222512078aee552c4430707084bfe997c335bad"
     },
     "CHANGELOG.md": {
-      "bytes": 514,
-      "sha256": "f017bfd28bf5d0e7f4048b990d3f210a3de139560e01d95d3120fc085de66659"
+      "bytes": 1137,
+      "sha256": "17b3a01dae8ba2a268f5c1e5bbc3dd058f5779cfa815b594c6e4a0e72b8aed0b"
     },
     "REPORT.md": {
-      "bytes": 671,
-      "sha256": "9b976ef4fd7703b1aa41343c9e2c2cd8e3ee7b4e1e32280e604a403d96966fb4"
+      "bytes": 996,
+      "sha256": "9fbb02101b2ef880a2a87372a19133348d169e0f947a168d69f1563495b16502"
     }
   },
-  "plugin.json": "sha256:528c5c109b03980d35ca6a2c6428a2d85275ef5b8c953e69f5592aadf46f2ce0",
-  "index.js": "sha256:81aad822fde9fab96d0fc8d880d9ff3bad3c7f68a6621698ca27542a27198ec3",
-  "index.css": "sha256:bd2cdc044060df702ae3a4de83cdfb547bb988c23972133fcd519f5a17decb9c",
+  "plugin.json": "sha256:85ac3b35a833ef21eab32deed1ea7d885df66a44e38e805ff8e7b44edf7d018e",
+  "index.js": "sha256:acadc20eebcaeb03c4e0643d0e6e21ad986e829cea24af8f15b26324cf2cdd2f",
+  "index.css": "sha256:de47f7f73c3bf64dd356ae9ce327b02a82b9c0f7ed9f27759505360a596ad385",
   "assets/map-contours.json": "sha256:ead5f68119c49a9250902e7da303bcb209341bbb8fefe7369a439b48b704658a",
   "assets/SOURCE.md": "sha256:913d693a3f737e691fd75f161222512078aee552c4430707084bfe997c335bad",
-  "CHANGELOG.md": "sha256:f017bfd28bf5d0e7f4048b990d3f210a3de139560e01d95d3120fc085de66659",
-  "REPORT.md": "sha256:9b976ef4fd7703b1aa41343c9e2c2cd8e3ee7b4e1e32280e604a403d96966fb4"
+  "CHANGELOG.md": "sha256:17b3a01dae8ba2a268f5c1e5bbc3dd058f5779cfa815b594c6e4a0e72b8aed0b",
+  "REPORT.md": "sha256:9fbb02101b2ef880a2a87372a19133348d169e0f947a168d69f1563495b16502"
 }
