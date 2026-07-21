@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src data:; font-src 'none'; connect-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'">
+  <title>Shipping Game · Phaser strategy map spike</title>
+  <link rel="stylesheet" href="spike.css">
+</head>
+<body>
+  <main class="spike">
+    <header class="topbar">
+      <div class="brand">
+        <span class="brand-mark" aria-hidden="true">SG</span>
+        <div>
+          <span class="eyebrow">Renderer spike · Phaser 3.90.0</span>
+          <h1>Black Sea strategy map</h1>
+        </div>
+      </div>
+      <div class="topbar-status">
+        <span class="status-dot" aria-hidden="true"></span>
+        Local assets only
+      </div>
+    </header>
+
+    <section class="workspace" aria-label="Interactive voyage strategy workspace">
+      <div class="map-card">
+        <div class="map-heading">
+          <div>
+            <span class="eyebrow">Scenario SG-001</span>
+            <h2>Voyage overview</h2>
+          </div>
+          <div class="map-tools" aria-label="Map controls">
+            <button type="button" class="motion-button" id="toggle-motion" aria-pressed="false" aria-label="Pause voyage cycle">
+              <span class="motion-icon" aria-hidden="true">Ⅱ</span>
+              <span class="motion-label">Pause cycle</span>
+            </button>
+            <button type="button" class="event-button" id="next-phase" aria-label="Advance to next voyage event">Next event</button>
+            <span class="zoom-readout" id="zoom-readout">100%</span>
+            <button type="button" id="zoom-out" aria-label="Zoom out">−</button>
+            <button type="button" id="zoom-in" aria-label="Zoom in">+</button>
+            <button type="button" class="reset-button" id="reset-view">Reset view</button>
+          </div>
+        </div>
+
+        <div class="map-stage" id="map-stage" aria-label="Phaser strategy map; drag to pan and use the wheel to zoom">
+          <div class="map-overlay map-overlay-left" aria-hidden="true">
+            <span class="overlay-kicker">BLACK SEA</span>
+            <strong>Training waters</strong>
+          </div>
+          <div class="map-overlay map-overlay-bottom">
+            <span class="gesture-icon" aria-hidden="true">↔</span>
+            Drag to pan
+            <span class="divider" aria-hidden="true"></span>
+            Scroll to zoom
+          </div>
+        </div>
+
+        <div class="map-footer">
+          <span><i class="legend-dot port-dot"></i> Port</span>
+          <span><i class="legend-line"></i> Laden voyage</span>
+          <span><i class="legend-line ballast-line"></i> Ballast positioning</span>
+          <span><i class="legend-vessel"></i> MV Northern Light</span>
+          <span class="map-source">Bundled Natural Earth/world-atlas contours</span>
+        </div>
+      </div>
+
+      <aside class="strategy-panel" aria-label="Voyage strategy">
+        <div class="strategy-heading">
+          <span class="eyebrow">Active voyage</span>
+          <span class="pill">TRAINING</span>
+        </div>
+        <h2 id="voyage-title">Odesa → Batumi</h2>
+        <p class="muted" id="voyage-summary">Loading the first fictional cargo in Odesa.</p>
+
+        <div class="vessel-card">
+          <div class="vessel-symbol" aria-hidden="true">▲</div>
+          <div>
+            <span class="card-label">VESSEL · CURRENT OPERATION</span>
+            <strong>MV Northern Light</strong>
+            <span class="vessel-state"><i></i><span id="vessel-load-detail">CORN · 32,521 MT</span></span>
+          </div>
+          <span class="load-state" id="vessel-load-state">LADEN</span>
+        </div>
+
+        <div class="metrics">
+          <div>
+            <span>Route</span>
+            <strong id="route-distance">— NM</strong>
+          </div>
+          <div>
+            <span>Phase left</span>
+            <strong id="phase-remaining">00:04</strong>
+          </div>
+          <div>
+            <span>Cycle</span>
+            <strong class="positive" id="cycle-phase">1/12</strong>
+          </div>
+        </div>
+
+        <div class="route-list">
+          <div class="route-list-title">
+            <h3>Voyage cycle</h3>
+            <span id="cycle-progress">Loading</span>
+          </div>
+          <ol>
+            <li class="active" data-milestone="odesa">
+              <span class="route-node"></span>
+              <div><strong>Load · Odesa</strong><small>UAODS · Corn 32,521 MT</small></div>
+              <time>LOAD</time>
+            </li>
+            <li data-milestone="batumi">
+              <span class="route-node"></span>
+              <div><strong>Discharge · Batumi</strong><small>GEBUS · Complete first voyage</small></div>
+              <time>DISC</time>
+            </li>
+            <li data-milestone="orders">
+              <span class="route-node"></span>
+              <div><strong>Await voyage order</strong><small>Batumi Roads · In ballast</small></div>
+              <time>WAIT</time>
+            </li>
+            <li data-milestone="constanta">
+              <span class="route-node"></span>
+              <div><strong>Load · Constanța</strong><small>ROCND · Anchor, berth, load</small></div>
+              <time>LOAD</time>
+            </li>
+            <li data-milestone="samsun">
+              <span class="route-node"></span>
+              <div><strong>Discharge · Samsun</strong><small>TRSSX · Next destination</small></div>
+              <time>DISC</time>
+            </li>
+          </ol>
+        </div>
+
+        <div class="decision-card">
+          <span class="card-label">NEXT VOYAGE ORDER</span>
+          <strong>Constanța → Samsun</strong>
+          <p>After discharge: wait at Batumi Roads, receive the fixture, then position in ballast.</p>
+        </div>
+
+        <p class="safety-note">Simulation only · not navigation or commercial advice</p>
+      </aside>
+    </section>
+
+    <footer class="lab-footer">
+      <span id="renderer-status">Starting local Phaser renderer…</span>
+      <span>Phaser 3.90.0 · MIT · no runtime network</span>
+    </footer>
+  </main>
+
+  <script src="vendor/phaser-3.90.0.min.js"></script>
+  <script src="map-core.js"></script>
+  <script src="strategy-model.js"></script>
+  <script src="generated/map-contours.js"></script>
+  <script src="spike.js"></script>
+</body>
+</html>
